@@ -14,16 +14,16 @@ ExternalProject_Add(gtest
 add_library(libgtest IMPORTED STATIC GLOBAL)
 add_library(libgtest_main IMPORTED STATIC GLOBAL)
 
-#ExternalProject_Get_Property(gtest source_dir binary_dir)
-#include_directories("${source_dir}/include")
+ExternalProject_Get_Property(gtest SOURCE_DIR BINARY_DIR)
 
 set_target_properties(libgtest PROPERTIES
-    "IMPORTED_LOCATION" "${binary_dir}/libgtest.a"
+    "IMPORTED_LOCATION" "${BINARY_DIR}/libgtest.a"
     "IMPORTED_LINK_INTERFACE_LIBRARIES" "${CMAKE_THREAD_LIBS_INIT}"
+    "INTERFACE_INCLUDE_DIRECTORIES" "${SOURCE_DIR}/include"
     )
 
 set_target_properties(libgtest_main PROPERTIES
-    "IMPORTED_LOCATION" "${binary_dir}/libgtest_main.a"
+    "IMPORTED_LOCATION" "${BINARY_DIR}/libgtest_main.a"
     "IMPORTED_LINK_INTERFACE_LIBRARIES" "${CMAKE_THREAD_LIBS_INIT}"
+    "INTERFACE_INCLUDE_DIRECTORIES" "${SOURCE_DIR}/include"
     )
-
