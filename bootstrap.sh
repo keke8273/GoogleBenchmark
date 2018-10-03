@@ -6,6 +6,7 @@ mkdir -p ${BUILD_DIR}
 
 EXTRA="
 -DCMAKE_BUILD_TYPE=Debug
+-DCMAKE_INSTALL_PREFIX=${BUILD_DIR}/install/
 "
 
 pushd ${BUILD_DIR}
