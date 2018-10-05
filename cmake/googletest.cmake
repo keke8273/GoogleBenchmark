@@ -20,13 +20,13 @@ ExternalProject_Get_Property(${PROJECT_NAME} INSTALL_DIR)
 set_target_properties(libgtest PROPERTIES
     "IMPORTED_LOCATION" "${INSTALL_DIR}/lib/libgtest.a"
     "IMPORTED_LINK_INTERFACE_LIBRARIES" "${CMAKE_THREAD_LIBS_INIT}"
-    "INTERFACE_INCLUDE_DIRECTORIES" "${INSTALL_DIR}/include/gtest"
+    "INTERFACE_INCLUDE_DIRECTORIES" "${INSTALL_DIR}/include"
     )
 
 set_target_properties(libgtest_main PROPERTIES
     "IMPORTED_LOCATION" "${INSTALL_DIR}/lib/libgtest_main.a"
     "IMPORTED_LINK_INTERFACE_LIBRARIES" "${CMAKE_THREAD_LIBS_INIT}"
-    "INTERFACE_INCLUDE_DIRECTORIES" "${INSTALL_DIR}/include/gtest"
+    "INTERFACE_INCLUDE_DIRECTORIES" "${INSTALL_DIR}/include"
     )
 
 set(GTEST_ROOT "${INSTALL_DIR}" CACHE PATH "path to gtest")

@@ -22,11 +22,11 @@ ExternalProject_Get_Property(${PROJECT_NAME} INSTALL_DIR)
 set_target_properties(libbenchmark PROPERTIES
     "IMPORTED_LOCATION" "${INSTALL_DIR}/lib/libbenchmark.a"
     "IMPORTED_LINK_INTERFACE_LIBRARIES" "${CMAKE_THREAD_LIBS_INIT}"
-    "INTERFACE_INCLUDE_DIRECTORIES" "${INSTALL_DIR}/include/benchmark"
+    "INTERFACE_INCLUDE_DIRECTORIES" "${INSTALL_DIR}/include"
     )
 
 set_target_properties(libbenchmark_main PROPERTIES
     "IMPORTED_LOCATION" "${INSTALL_DIR}/lib/libbenchmark_main.a"
     "IMPORTED_LINK_INTERFACE_LIBRARIES" "${CMAKE_THREAD_LIBS_INIT}"
-    "INTERFACE_INCLUDE_DIRECTORIES" "${INSTALL_DIR}/include/benchmark"
+    "INTERFACE_INCLUDE_DIRECTORIES" "${INSTALL_DIR}/include"
     )

@@ -8,3 +8,5 @@ add_compile_options(-W -Wall)
 
 include(googletest)
 include(googlebenchmark)
+
+add_subdirectory(benchmarks)
