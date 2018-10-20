@@ -1,21 +1,22 @@
 #include <benchmark/benchmark.h>
 #include <sstream>
 
-// Benchmark string creation
-static void BM_string_creation(benchmark::State& state) {
+// Benchmark string construction
+static void BM_string_construction(benchmark::State& state) {
     for (auto _ : state) {
         std::string empty_string;
     }
 }
 
-BENCHMARK(BM_string_creation);
+BENCHMARK(BM_string_construction);
 
-// Benchmark string copy
-static void BM_stringstream_creation(benchmark::State& state) {
+// benchmark stringstream construction
+static void BM_stringstream_construction(benchmark::State& state) {
     for (auto _ : state) {
         std::stringstream ss;
     }
 }
 
-BENCHMARK(BM_stringstream_creation);
+BENCHMARK(BM_stringstream_construction);
+
 
