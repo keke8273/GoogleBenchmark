@@ -1,19 +1,11 @@
 #include <benchmark/benchmark.h>
 
-// Benchmark string creation
-static void BM_StringCreation(benchmark::State& state) {
-    for (auto _ : state)
-        std::string empty_string;
-}
-
-BENCHMARK(BM_StringCreation);
-
 // Benchmark string copy
-static void BM_StringCopy(benchmark::State& state) {
+static void BM_string_copy(benchmark::State& state) {
     std::string x = "hello";
     for (auto _ : state)
         std::string copy(x);
 }
 
-BENCHMARK(BM_StringCopy);
+BENCHMARK(BM_string_copy);
 
