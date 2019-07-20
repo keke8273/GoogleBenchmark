@@ -3,16 +3,17 @@ set(COMPILE_FLAG $<$<CONFIG:Release>:${CMAKE_CXX_FLAGS_RELEASE}>$<$<NOT:$<CONFIG
 
 include(ExternalProject)
 
-ExternalProject_Add(${PROJECT_NAME}
-	GIT_REPOSITORY 	"https://github.com/google/googletest.git"
-	GIT_TAG 	"release-1.8.1"
-        BINARY_DIR	"${CMAKE_BINARY_DIR}/${PROJECT_NAME}-build"
-        SOURCE_DIR	"${CMAKE_BINARY_DIR}/${PROJECT_NAME}-src"
-        INSTALL_DIR     "${CMAKE_BINARY_DIR}/${PROJECT_NAME}-install"
-        BUILD_COMMAND   make CFLAGS=${COMPILE_FLAG}
-        CMAKE_ARGS      "-DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>"
-	LOG_BUILD ON
-	)	
+ExternalProject_Add(
+    ${PROJECT_NAME}
+    GIT_REPOSITORY 	"https://github.com/google/googletest.git"
+    GIT_TAG 	    "release-1.8.1"
+    BINARY_DIR	    "${CMAKE_BINARY_DIR}/${PROJECT_NAME}-build"
+    SOURCE_DIR	    "${CMAKE_BINARY_DIR}/${PROJECT_NAME}-src"
+    INSTALL_DIR     "${CMAKE_BINARY_DIR}/${PROJECT_NAME}-install"
+    BUILD_COMMAND   make CFLAGS=${COMPILE_FLAG}
+    CMAKE_ARGS      "-DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>"
+    LOG_BUILD ON
+    )
 
 add_library(libgtest IMPORTED STATIC GLOBAL)
 
